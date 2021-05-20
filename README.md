@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Для запуска
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Должен быть установлен Node.JS
+2. В 1 Терминал ввести "npm run server"
+3. Во 2 Терминал ввести "npm start"
 
 ## Available Scripts
 
