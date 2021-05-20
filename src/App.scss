@@ -1,0 +1,221 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+*:focus {
+  outline: none;
+}
+* {
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+html,
+#root {
+  min-height: 100%;
+  background-color: #f5f5f5;
+  font-size: Roboto, sans-serif;
+  color: #191919;
+}
+
+.window {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  // flex-direction: column;
+  // padding: 30px;
+  margin: 70px auto;
+  width: 700px;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.users {
+  padding: 10px;
+  flex: 0 0 30%;
+  .room {
+    word-wrap: break-word;
+    word-break: break-all;
+    cursor: pointer;
+    color: rgb(163, 101, 235);
+  }
+  .user {
+    cursor: pointer;
+  }
+
+  h3 {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+  }
+  ul {
+    padding: 15px 10px;
+    list-style: none;
+    li {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      font-size: 16px;
+      vertical-align: middle;
+      margin: 10px 0;
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 5px 10px;
+      // line-height: ;
+      box-shadow: 0 2px 9px rgba(0, 0, 0, 0.12);
+    }
+  }
+}
+
+.fields {
+  overflow: hidden;
+  display: flex;
+
+  height: 60px;
+  // padding: 10px 0 0;
+  border-radius: 15px;
+  background-color: rgb(163, 101, 235);
+  // margin-bottom: -70px;
+
+  textarea {
+    resize: none;
+    height: 100%;
+    font-size: 16px;
+    padding: 5px 15px;
+    outline: none;
+    line-height: 1;
+    flex: 1 1 300px;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    border-radius: 3px 3px 3px 15px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .record {
+    padding: 15px;
+    transform-origin: center;
+    background-origin: border-box;
+    background-size: 90%;
+    background-position: center center;
+
+    background-repeat: no-repeat;
+  }
+  .record-on {
+    background-image: url("./img/microphone-2.svg");
+    animation: record 1s ease-in-out infinite alternate;
+  }
+  .record-off {
+    background-image: url("./img/microphone-1.svg");
+    // background: url("./img/microphone-1.svg") center center/80% no-repeat;
+  }
+  button {
+    &:last-child {
+      border-radius: 3px 3px 15px 3px;
+    }
+    padding: 0 10px;
+
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgb(143, 80, 216);
+    transition: all 0.1s ease-in;
+    &:hover {
+      background-color: lighten(rgb(143, 80, 216), 10);
+    }
+    &:active {
+      background-color: darken(rgb(143, 80, 216), 10);
+    }
+  }
+}
+
+#chat {
+  flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 50%;
+  border-radius: 15px;
+  background-color: rgb(248, 241, 255);
+  padding: 15px;
+  list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  li.mess_your {
+    align-self: flex-end;
+  }
+  li {
+    width: 80%;
+    margin: 3px 0 10px;
+
+    .user_name {
+      display: inline-block;
+      margin: 0 0 2px 2px;
+      font-size: 12px;
+      color: rgb(146, 67, 224);
+    }
+    .user_mess {
+      display: flex;
+      flex-direction: column;
+      font-size: 14px;
+      padding: 5px 8px;
+      border-radius: 8px;
+      background-color: rgb(215, 191, 238);
+    }
+    .mess_date {
+      font-weight: 500;
+      opacity: 0.6;
+      font-size: 9px;
+      align-self: flex-end;
+    }
+  }
+}
+
+.join-block {
+  padding: 20px;
+  width: 300px;
+  margin: 0 auto;
+  input {
+    height: 40px;
+    padding: 8px 15px;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  button {
+    margin: 5px 0;
+    font-size: 20px;
+    height: 40px;
+    padding: 8px 15px;
+    width: 100%;
+    color: #fff;
+    background-color: rgb(143, 80, 216);
+    &:disabled {
+      background-color: rgb(176, 141, 216);
+      color: #eee;
+    }
+  }
+}
+
+@keyframes record {
+  0% {
+    transform: scale(1);
+    // background-size: 80%;
+  }
+  100% {
+    transform: scale(0.9);
+    // background-size: 70%;
+  }
+}
